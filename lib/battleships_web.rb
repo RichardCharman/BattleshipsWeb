@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 class BattleshipsWeb < Sinatra::Base
-  configure :development do
+configure :development do
   set :bind, '0.0.0.0'
   set :port, 3000
 end
@@ -11,6 +11,9 @@ end
     erb :index
   end
 
+  get '/name_set' do
+    erb :enter_name
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 
